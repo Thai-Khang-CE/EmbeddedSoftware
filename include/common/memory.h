@@ -156,13 +156,13 @@ uint8_t * my_memzero(uint8_t * src, size_t length);
 uint8_t * my_reverse(uint8_t * src, size_t length);
 
 /**
- * @brief Allocates and reserves memory for an array of words
+ * @brief This should take number of words to allocate in dynamic memory
  * 
- * This function reserves dynamic memory for a given number of words (int32_t).
+ * This function reserves dynamic memory for a given length.
  * 
  * @param length Number of words to allocate
  * 
- * @return Pointer to allocated memory
+ * @return Should return a pointer to memory if successful, or a Null Pointer if not successful
  */
 int32_t * reserve_words(size_t length);
 
@@ -176,4 +176,5 @@ int32_t * reserve_words(size_t length);
  * @return void.
  */
 void free_words(int32_t * src);
+
 #endif /* __MEMORY_H__ */
