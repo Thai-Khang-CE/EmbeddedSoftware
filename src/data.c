@@ -46,14 +46,15 @@ uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base)
         *(ptr + length) = remainder;
         length++;
     }
-    my_reverse(ptr, length - 1);
+    length += 1;
     *(ptr + length) = '\0';
+    my_reverse(ptr, length-1);
     return length;
 }
 
 int32_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base)
 {
-    int32_t value = 0;
+    uint32_t value = 0;
     for(int i = 0; i < digits - 1; i++)
     {
         if(base == 16 && *(ptr + i) >= 'A')
@@ -65,7 +66,7 @@ int32_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base)
             value = value + (*(ptr + i) - '0') * power_function(base, digits - 2 - i);  
         }
     }
-    return value;
+    return (int32_t)value;
 }
 
 

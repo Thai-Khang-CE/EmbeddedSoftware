@@ -12,23 +12,24 @@
 # Add your Source files to this variable
 PLATFORM = MSP432
 
-ifeq($(PLATFORM), MSP432)
+ifeq ($(PLATFORM), MSP432)
 	SOURCES = ./src/main.c \
 			./src/stats.c \
-			./src/platform.c \
 			./src/memory.c \
 			./src/interrupts_msp432p401r_gcc.c \
 			./src/startup_msp432p401r_gcc.c \
 			./src/system_msp432p401r.c
-			
+
 	INCLUDES = -I ./include/CMSIS \
 			   -I ./include/msp432\
 			   -I ./include/common
 else
     SOURCES = ./src/main.c \
 			./src/stats.c \
-			./src/platform.c \
 			./src/memory.c \
+			./src/course1.c \
+			./src/data.c
+
 	INCLUDES = -I ./include/common
 
 endif

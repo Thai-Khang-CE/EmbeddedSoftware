@@ -23,6 +23,7 @@
 #include "memory.h"
 #include <stdint.h>
 #include <stddef.h>
+#include <stdlib.h>
 /***********************************************************
  Function Definitions
 ***********************************************************/

@@ -18,31 +18,31 @@
  *
  */
 
-#include <stdio.h>
+//#include <stdio.h>
 #include "stats.h"
-
+#include "platform.h"
 /* Size of the Data Set */
 #define SIZE (40)
 
-void main() 
-{
+// void main() 
+// {
 
-  unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
-                              114, 88,   45,  76, 123,  87,  25,  23,
-                              200, 122, 150, 90,   92,  87, 177, 244,
-                              201,   6,  12,  60,   8,   2,   5,  67,
-                                7,  87, 250, 230,  99,   3, 100,  90};
+//   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
+//                               114, 88,   45,  76, 123,  87,  25,  23,
+//                               200, 122, 150, 90,   92,  87, 177, 244,
+//                               201,   6,  12,  60,   8,   2,   5,  67,
+//                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
-  printf("COMPILE WITHOUT ERROR\n");
-  printf("Array before sort:\n");
-  printf_array(test,SIZE);
-  printf("\n");
-  printf("Statistics of dataset\n");
-  print_statistics(test, SIZE);
-  printf_array(test, SIZE);
-}
+//   /* Other Variable Declarations Go Here */
+//   /* Statistics and Printing Functions Go Here */
+//   printf("COMPILE WITHOUT ERROR\n");
+//   printf("Array before sort:\n");
+//   printf_array(test,SIZE);
+//   printf("\n");
+//   printf("Statistics of dataset\n");
+//   print_statistics(test, SIZE);
+//   printf_array(test, SIZE);
+// }
 
 void print_statistics(unsigned char* arr, int arr_size)
 {
@@ -54,11 +54,13 @@ void print_statistics(unsigned char* arr, int arr_size)
 
 void printf_array(unsigned char* arr, int arr_size)
 {
+  #ifdef VERBOSE
   for(int i = 0; i < arr_size; i++)
   {
-    printf("%d ", *(arr + i));
+    PRINTF("%d ", *(arr + i));
   }
-  printf("\n");
+  PRINTF("\n");
+  #endif
 }
 
 unsigned int find_median(unsigned char* arr, int arr_size)

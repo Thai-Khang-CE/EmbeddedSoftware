@@ -16,8 +16,8 @@
  * are not to change any of the code, they are instead supposed to compile
  * these files with their makefile.
  *
- * @author Alex Fosdick
- * @date April 1 2017
+ * @author Nguyen Khac Thai Khang
+ * @date 10/03/2026
  *
  */
 #include "platform.h"
