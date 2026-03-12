@@ -128,7 +128,7 @@ int32_t * reserve_words(size_t length)
     return ptr;
 }
 
-void free_words(int32_t * src)
+void free_words(void * src)
 {
     free((void *)src);
 }

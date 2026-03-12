@@ -75,7 +75,7 @@ compile-all: $(OBJECTS)
 
 .PHONY: build
 build: compile-all
-	$(LD) $(LDFLAGS) $(OBJECTS) -o $(TARGET).elf
+	$(LD) $(CFLAGS) $(LDFLAGS) $(OBJECTS) -o $(TARGET).elf
 
 .PHONY: clean
 clean:

@@ -46,10 +46,10 @@
 
 void print_statistics(unsigned char* arr, int arr_size)
 {
-  printf("minimum value of array is: %d\n", find_minimum(arr, arr_size));
-  printf("maximum value of array is: %d\n", find_maximum(arr, arr_size));
-  printf("mean value of array is: %d\n", find_mean(arr,arr_size));
-  printf("median value of array is: %d\n", find_median(arr,arr_size));
+  PRINTF("minimum value of array is: %d\n", find_minimum(arr, arr_size));
+  PRINTF("maximum value of array is: %d\n", find_maximum(arr, arr_size));
+  PRINTF("mean value of array is: %d\n", find_mean(arr,arr_size));
+  PRINTF("median value of array is: %d\n", find_median(arr,arr_size));
 }
 
 void printf_array(unsigned char* arr, int arr_size)
