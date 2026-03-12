@@ -36,12 +36,12 @@ ifeq ($(PLATFORM), MSP432)
 	CC = arm-none-eabi-gcc
 	LD = arm-none-eabi-gcc
 	LDFLAGS = -Wl,-T,$(LINKER_FILE),-Map=$(TARGET).map
-	CFLAGS = -mcpu=$(CPU) -m$(ARCH) --specs=$(SPECS) -O2 -Wall -D$(PLATFORM)
+	CFLAGS = -mcpu=$(CPU) -m$(ARCH) --specs=$(SPECS) -O2 -Wall -D$(PLATFORM) -MMD -MP
 else
 	CC = gcc
 	LD = gcc
 	LDFLAGS = -Wl,-Map=$(TARGET).map
-	CFLAGS = -O2 -Wall -D$(PLATFORM)
+	CFLAGS = -O2 -Wall -D$(PLATFORM) -MMD -MP
 endif
 
 ifdef VERBOSE
@@ -55,6 +55,9 @@ CFLAGS += -DCOURSE1
 CPPFLAGS += -DCOURSE1
 ASFLAGS += -DCOURSE1
 endif
+
+DEPS = $(OBJECTS:.o=.d)
+-include $(DEPS)
 
 ASFLAGS += -S
 CPPFLAGS += -E -D$(PLATFORM)
@@ -79,7 +82,7 @@ build: compile-all
 
 .PHONY: clean
 clean:
-	rm -rf $(OBJECTS) $(TARGET).elf $(TARGET).map
+	rm -rf $(OBJECTS) $(TARGET).elf $(TARGET).map ./src/*.d ./src/*.i ./src/*.asm
 
 
 
