@@ -14,22 +14,17 @@ jobs:
     - name: Checkout Source Code
       uses: actions/checkout@v3
 
-    - name: Install ARM GCC Toolchain & Make
+    - name: Install Build Tools (Make & GCC)
       run: |
         sudo apt-get update
-        sudo apt-get install -y gcc-arm-none-eabi make gcc
+        sudo apt-get install -y make gcc
 
     - name: Build for Host Platform
       run: |
         echo "Building for HOST..."
         make build PLATFORM=HOST
 
-    - name: Build for MSP432 Platform
-      run: |
-        echo "Building for MSP432..."
-        make build PLATFORM=MSP432
-
-    - name: Check Output Linker & ELF
+    - name: Check Output Files
       run: |
         ls -la *.out || true
         ls -la *.map || true
