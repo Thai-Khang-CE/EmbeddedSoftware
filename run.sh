@@ -11,7 +11,7 @@ echo "[1] Cleaning old build files..."
 make clean
 
 echo "[2] Building for HOST environment..."
-make build PLATFORM=HOST
+make build PLATFORM=HOST COURSE1=1
 
 echo "[3] Analyzing Executable Memory (Size)..."
 # Tìm file đầu ra .out và dùng lệnh size tiêu chuẩn của Linux để phân tích
@@ -22,6 +22,6 @@ else
     echo "No .out file found to analyze."
 fi
 
-echo "======================================"
+echo "======================================"  
 echo "          BUILD SUCCESSFUL!           "
 echo "======================================"

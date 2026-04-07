@@ -65,7 +65,7 @@ void printf_array(unsigned char* arr, int arr_size)
 
 unsigned int find_median(unsigned char* arr, int arr_size)
 {
-  sort_array(arr, arr_size);
+   sort_array(arr, arr_size);
 
     if(arr_size % 2 == 1)
     {
