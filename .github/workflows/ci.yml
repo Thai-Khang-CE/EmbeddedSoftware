@@ -21,6 +21,8 @@ jobs:
 
     - name: Build for Host Platform
       run: |
+        echo "Cleaning previous builds..."
+        make clean
         echo "Building for HOST..."
         make build PLATFORM=HOST
 
